@@ -1,0 +1,25 @@
+W pliku z programem obliczyłem wartości ceny opcji europejskiej call korzystając z metody Monte Carlo i Quasi Monte Carlo
+dla M = {10 000, 20 000, ... , 1 000 000} w trzech przypadkach:
+- biorąc cenę wykonania opcji Call równą cenie instrumentu bazowego S0 (ATM)
+- biorąc cenę wykonania opcji Call równą połowie ceny instrumentu bazowego S0 (ITM)
+- biorąc cenę wykonania opcji Call równą półtorej ceny instrumentu bazowego S0 (OTM)
+W każdym przypadku obliczyłem błędy bezwzględne względem ceny tej opcji wyznaczonej ze wzoru z modelu Blacka-Scholesa oraz przedstawiłem
+te błędy na wykresach wraz z linią wyznaczoną przez teoretyczne ograniczenie górne tych błędów.
+We wszystkich trzech przypadkach zauważyłem, że metoda Quasi Monte Carlo ma mniejszy błąd i szybciej się on zmniejsza
+niż w przypadku tradycyjnej metody Monte Carlo.
+We wszystkich przypadkach wzór na teoretyczne ograniczenie górne błędów bezwzględnych musiałem przemnożyć przez pewną stałą zależną
+od wykonania ceny opcji call.
+Przypadek ATM:
+W tym przypadku błędy obu metod były największe ze wszystkich trzech przypadków. Stałe, przez które przemnożyłem teoretyczne ograniczenie błędów, 
+wynosiły 6 dla metody Quasi Monte Carlo oraz 5 dla tradycyjnego Monte Carlo. Po przemnożeniu przez tą stałą błędy pozostają mniejsze od ograniczenia błędu
+dla większości z obliczonych M.
+Błędy dla bardzo dużych M są mniejsze niż 0.01 dla metody Monte Carlo oraz mniejsze od 0.00025 dla metody Quasi Monte Carlo.
+Przypadek OTM:
+W tym przypadku błędy obu metod były zdecydowanie mniejsze niż w przypadku ATM. Stałe, przez które przemnożyłem teoretyczne ograniczenie błędów
+wynosiły 2 dla obu metod. Po przemnożeniu przez tą stałą błędy pozostają mniejsze od ograniczenia błędu dla większości z obliczonych M.
+Błędy dla bardzo dużych M są mniejsze niż 0.0025 dla metody Monte Carlo oraz mniejsze od 0.0001 dla metody Quasi Monte Carlo.
+Przypadek ITM:
+W tym przypadku błędy obu metod były mniejsze niż w przypadku ATM, ale większe niż w OTM. Stałe, przez które przemnożyłem teoretyczne ograniczenie błędów, 
+wynosiły 2 dla metody Quasi Monte Carlo oraz 3 dla tradycyjnego Monte Carlo. Po przemnożeniu przez tą stałą błędy pozostają mniejsze od ograniczenia błędu
+dla większości z obliczonych M.
+Błędy dla bardzo dużych M są mniejsze niż 0.005 dla metody Monte Carlo oraz mniejsze od 0.0001 dla metody Quasi Monte Carlo.
